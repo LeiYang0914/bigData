@@ -206,6 +206,19 @@ df_clean = df_clean.withColumn(
 print("\nPreprocessing complete!")
 df_clean.select("Age", "AgeGroup", "AgeBand", "RiskScore", "LifestyleProfile").show(10)
 
+# Save as single CSV file (for easy download)
+output_path = "gs://bd-bucket-01/heart_disease_cleaned.csv"
+
+print(f"\nSaving clean dataset to: {output_path}")
+
+# Coalesce to 1 partition for single file output
+df_clean.coalesce(1).write \
+    .mode("overwrite") \
+    .option("header", "true") \
+    .csv(output_path)
+
+print("Clean dataset saved successfully!")
+
 # ============================================
 # 8. Machine Learning Pipeline Setup
 # ============================================
