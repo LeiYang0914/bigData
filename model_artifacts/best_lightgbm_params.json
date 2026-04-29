@@ -1,0 +1,17 @@
+{
+    "learning_rate": 0.08056145504074186,
+    "num_leaves": 48,
+    "max_depth": 4,
+    "min_child_samples": 49,
+    "feature_fraction": 0.9158406909356689,
+    "bagging_fraction": 0.8269319380373382,
+    "bagging_freq": 7,
+    "lambda_l1": 0.3413222981446417,
+    "lambda_l2": 0.06011082350100313,
+    "objective": "binary",
+    "metric": "auc",
+    "boosting_type": "gbdt",
+    "verbosity": -1,
+    "feature_pre_filter": false,
+    "seed": 123
+}
